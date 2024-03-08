@@ -19,7 +19,7 @@ public class GameController {
         return new ResponseEntity<>(gameId, HttpStatus.CREATED);
     }
 
-    @GetMapping
+    @GetMapping("/{gameId}")
     public ResponseEntity<int[][]> getGameState(@PathVariable String gameId){
         int[][] gameState = gameManager.getGameState(gameId);
         return new ResponseEntity<>(gameState, HttpStatus.OK);
