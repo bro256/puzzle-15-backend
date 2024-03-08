@@ -33,5 +33,11 @@ public class GameController {
         return new ResponseEntity<>(updatedGameState, HttpStatus.OK);
     }
 
+    @GetMapping("/{gameId}/complete")
+    public ResponseEntity<Boolean> checkGameCompletion(@PathVariable String gameId){
+        boolean isComplete = gameManager.isGameComplete(gameId);
+        return new ResponseEntity<>(isComplete, HttpStatus.OK);
+    }
+
 
 }
