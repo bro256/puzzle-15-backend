@@ -6,7 +6,7 @@ The 15 Puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Squa
 ## API
 This project is Java Spring backend API</br>
 No database is used</br>
-Frontend application will be made in future :)
+Frontend application will be made in future :)</br>
 
 ## API Endpoints
 ### Create Game
@@ -21,5 +21,18 @@ Retrieve the current state of the game board.</br>
 Method: 'GET'</br>
 URL: '/api/game/{gameId}'</br>
 Response: Current state of the game board</br>
+
+### Make Move
+Make a move in the game by specifying the tile value to move</br>
+Method: 'PUT'</br>
+URL: '/api/game/{gameId}/move'</br>
+Request Body: 'tileValue' (integer): The value of the tile to move</br>
+Response: Updated game state after the move</br>
+
+### Check Game Completion
+Check if the game is completed (all tiles are in the correct order).</br>
+Method: GET</br>
+URL: /api/game/{gameId}/complete</br>
+Response: Boolean indicating if the game is complete</br>
 
 
