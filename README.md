@@ -1,12 +1,14 @@
 # Java Spring based 15 Puzzle Game backend API
 
 ## About
-The 15 Puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Square and more) is a sliding puzzle. It has 15 square tiles numbered 1 to 15 in a frame that is 4 tile positions high and 4 tile positions wide, with one unoccupied position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order (from left to right, top to bottom).
+The 15 Puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Square and more) is a sliding puzzle. It has 15 square tiles numbered 1 to 15 in a frame that is 4 tile positions high and 4 tile positions wide, with one unoccupied position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order (from left to right, top to bottom).</br>
+
+Full description: [Wikipedia](https://en.wikipedia.org/wiki/15_Puzzle)
 
 ## API
 This project is Java Spring backend API</br>
 No database is used</br>
-Frontend application will be made in future :)</br>
+Frontend application will be made later :)</br>
 
 ## API Endpoints
 ### Create Game
