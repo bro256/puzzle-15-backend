@@ -3,6 +3,8 @@
 ## About
 The 15 Puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Square, and more) is a sliding puzzle. It has 15 square tiles numbered 1 to 15 in a frame that is 4 tile positions high and 4 tile positions wide, with one unoccupied position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order (from left to right, top to bottom).
 
+![15 Puzzle](https://github.com/bro256/puzzle-15-backend/blob/main/images/game.png)
+
 Full description: [Wikipedia](https://en.wikipedia.org/wiki/15_Puzzle)
 
 ## API
@@ -53,7 +55,7 @@ To install and set up the project locally, follow these steps:
 
 1. Clone the repository to your local machine:
 ```bash
-git clone https://github.com/your-username/puzzle-15-backend.git
+git clone https://github.com/bro256/puzzle-15-backend.git
 ```
 2. Navigate to the project directory:
 ```bash
