@@ -1,12 +1,12 @@
-package local;
+package local.services;
 
 import java.util.Arrays;
 
-public class GameLogic {
+public class GameLogicService {
     private int[][] gameState;
     private final int size;
 
-    public GameLogic(int size) {
+    public GameLogicService(int size) {
         this.size = size;
         initializeGameState();
     }
