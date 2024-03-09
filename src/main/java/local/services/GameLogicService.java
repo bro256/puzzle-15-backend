@@ -11,6 +11,9 @@ public class GameLogicService {
         initializeGameState();
     }
 
+    /**
+     * Intitialize game state
+     */
     private void initializeGameState() {
         gameState = new int[size][size];
         int count = 1;
@@ -22,10 +25,18 @@ public class GameLogicService {
         gameState[size - 1][size - 1] = 0; // Empty space: 0
     }
 
+    /**
+     * Get game state
+     * @return game state
+     */
     public int[][] getGameState() {
         return gameState;
     }
 
+    /**
+     * Make move
+     * @param tileValue the value of tile to move
+     */
     public void makeMove(int tileValue) {
         int[] tilePosition = findTilePosition(tileValue);
         int[] emptyTilePosition = findEmptyTilePosition();
@@ -41,7 +52,9 @@ public class GameLogicService {
         swapTiles(tilePosition, emptyTilePosition);
     }
 
-
+    /**
+     * Shuffle game
+     */
     public void shuffleGame() {
         for (int i = 0; i < 1000; i++) {
             int[] emptyTilePosition = findEmptyTilePosition();
@@ -53,6 +66,10 @@ public class GameLogicService {
         }
     }
 
+    /**
+     * Check if game is complete
+     * @return true if the game is complete, false otherwise.
+     */
     public boolean isGameComplete() {
         int previousTile = -1;
         for (int[] row : gameState) {
@@ -66,6 +83,10 @@ public class GameLogicService {
         return true;
     }
 
+    /**
+     * Get empty tile position
+     * @return empty tile position
+     */
     private int[] findEmptyTilePosition() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -77,6 +98,12 @@ public class GameLogicService {
         throw new IllegalStateException("Empty tile not found in the game state");
     }
 
+    /**
+     * Get new position
+     * @param currentPosition
+     * @param direction
+     * @return new position
+     */
     private int[] getNewPosition(int[] currentPosition, int direction) {
         int[] newPosition = Arrays.copyOf(currentPosition, currentPosition.length);
         switch (direction) {
@@ -96,18 +123,33 @@ public class GameLogicService {
         return newPosition;
     }
 
+    /**
+     * Check if position is valid
+     * @param position position
+     * @return the new position after moving in the specified direction.
+     */
     private boolean isValidPosition(int[] position) {
         int row = position[0];
         int col = position[1];
         return row >= 0 && row < size && col >= 0 && col < size;
     }
 
+    /**
+     * Swap tiles
+     * @param position1 the position of the first tile to swap [row, column].
+     * @param position2 the position of the second tile to swap [row, column].
+     */
     private void swapTiles(int[] position1, int[] position2) {
         int temp = gameState[position1[0]][position1[1]];
         gameState[position1[0]][position1[1]] = gameState[position2[0]][position2[1]];
         gameState[position2[0]][position2[1]] = temp;
     }
 
+    /**
+     * Find tile position
+     * @param tileValue
+     * @return
+     */
     public int[] findTilePosition(int tileValue) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -119,6 +161,12 @@ public class GameLogicService {
         return null; // Tile not found
     }
 
+    /**
+     * Check if is adjecant
+     * @param tilePosition the position of the tile to check [row, column].
+     * @param emptyTilePosition the position of the empty tile [row, column].
+     * @return true if the tile is adjacent to the empty tile, false otherwise.
+     */
     public boolean isAdjacent(int[] tilePosition, int[] emptyTilePosition) {
         int rowDiff = Math.abs(tilePosition[0] - emptyTilePosition[0]);
         int colDiff = Math.abs(tilePosition[1] - emptyTilePosition[1]);
