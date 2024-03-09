@@ -15,6 +15,10 @@ public class GameManagerService {
         this.games = new HashMap<>();
     }
 
+    /**
+     * Create new game
+     * @return game ID
+     */
     public String createGame() {
         String gameId = generateGameId();
         GameLogicService gameLogicService = new GameLogicService(4);
@@ -23,6 +27,11 @@ public class GameManagerService {
         return gameId;
     }
 
+    /**
+     * Get game state
+     * @param gameId
+     * @return game state
+     */
     public int[][] getGameState(String gameId) {
         GameLogicService gameLogicService = games.get(gameId);
         if (gameLogicService == null) {
@@ -31,6 +40,11 @@ public class GameManagerService {
         return gameLogicService.getGameState();
     }
 
+    /**
+     * Make move
+     * @param gameId
+     * @param tileValue
+     */
     public void makeMove(String gameId, int tileValue) {
         GameLogicService gameLogicService = games.get(gameId);
         if (gameLogicService == null) {
@@ -39,6 +53,10 @@ public class GameManagerService {
         gameLogicService.makeMove(tileValue);
     }
 
+    /**
+     * Shuffle game
+     * @param gameId
+     */
     public void shuffleGame(String gameId) {
         GameLogicService gameLogicService = games.get(gameId);
         if (gameLogicService == null) {
@@ -47,6 +65,11 @@ public class GameManagerService {
         gameLogicService.shuffleGame();
     }
 
+    /**
+     * Check if selected game is complete
+     * @param gameId
+     * @return {@code true} if the game is complete, {@code false} if the game is not complete.
+     */
     public boolean isGameComplete(String gameId) {
         GameLogicService gameLogicService = games.get(gameId);
         if (gameLogicService == null) {
@@ -55,6 +78,10 @@ public class GameManagerService {
         return gameLogicService.isGameComplete();
     }
 
+    /**
+     * Generate unique game ID
+     * @return generated game ID in String format
+     */
     public String generateGameId() {
         return UUID.randomUUID().toString();
     }
