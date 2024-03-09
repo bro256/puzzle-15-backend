@@ -147,7 +147,7 @@ public class GameLogicService {
 
     /**
      * Find tile position
-     * @param tileValue
+     * @param tileValue tile value
      * @return
      */
     public int[] findTilePosition(int tileValue) {

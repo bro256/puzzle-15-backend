@@ -29,7 +29,7 @@ public class GameManagerService {
 
     /**
      * Get game state
-     * @param gameId
+     * @param gameId game ID
      * @return game state
      */
     public int[][] getGameState(String gameId) {
@@ -42,8 +42,8 @@ public class GameManagerService {
 
     /**
      * Make move
-     * @param gameId
-     * @param tileValue
+     * @param gameId game ID
+     * @param tileValue tile Value
      */
     public void makeMove(String gameId, int tileValue) {
         GameLogicService gameLogicService = games.get(gameId);
@@ -55,7 +55,7 @@ public class GameManagerService {
 
     /**
      * Shuffle game
-     * @param gameId
+     * @param gameId game ID
      */
     public void shuffleGame(String gameId) {
         GameLogicService gameLogicService = games.get(gameId);
@@ -67,7 +67,7 @@ public class GameManagerService {
 
     /**
      * Check if selected game is complete
-     * @param gameId
+     * @param gameId game ID
      * @return {@code true} if the game is complete, {@code false} if the game is not complete.
      */
     public boolean isGameComplete(String gameId) {
