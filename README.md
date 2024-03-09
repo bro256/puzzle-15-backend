@@ -47,3 +47,24 @@ Check if the game is completed (all tiles are in the correct order).
 - Method: `GET`
 - URL: `/api/game/{gameId}/complete`
 - Response: Boolean indicating if the game is complete
+
+## Installation
+To install and set up the project locally, follow these steps:
+
+1. Clone the repository to your local machine:
+```bash
+git clone https://github.com/your-username/puzzle-15-backend.git
+```
+2. Navigate to the project directory:
+```bash
+cd puzzle-15-backend
+```
+3. Build the project using Maven:
+```bash
+mvn clean install
+```
+4. Run the project:
+```bash
+mvn spring-boot:run
+```
+5. The API will be accessible at http://localhost:8080.
