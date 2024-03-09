@@ -3,7 +3,7 @@
 ## About
 The 15 Puzzle (also called Gem Puzzle, Boss Puzzle, Game of Fifteen, Mystic Square, and more) is a sliding puzzle. It has 15 square tiles numbered 1 to 15 in a frame that is 4 tile positions high and 4 tile positions wide, with one unoccupied position. Tiles in the same row or column of the open position can be moved by sliding them horizontally or vertically, respectively. The goal of the puzzle is to place the tiles in numerical order (from left to right, top to bottom).
 
-![15 Puzzle](https://github.com/bro256/puzzle-15-backend/blob/main/images/game.png=256x256)
+![15 Puzzle](https://github.com/bro256/puzzle-15-backend/blob/main/images/game.png =256x256)
 
 Full description: [Wikipedia](https://en.wikipedia.org/wiki/15_Puzzle)
 
