@@ -1,4 +1,5 @@
 import local.services.GameLogicService;
+import local.services.GameManagerService;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -62,5 +63,6 @@ public class GameLogicTest {
         }
         return true;
     }
+
 
 }

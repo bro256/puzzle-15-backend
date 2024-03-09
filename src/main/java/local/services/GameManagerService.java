@@ -55,7 +55,7 @@ public class GameManagerService {
         return gameLogicService.isGameComplete();
     }
 
-    private String generateGameId() {
+    public String generateGameId() {
         return UUID.randomUUID().toString();
     }
 }
