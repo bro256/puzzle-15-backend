@@ -11,7 +11,8 @@ No database is used</br>
 Frontend application will be made later :)</br>
 
 ## API Endpoints
-Swagger OpenAPI definition:</br>
+### Swagger OpenAPI definition
+Local link: http://localhost:8080/swagger-ui/index.html:</br>
 ![swagger-game-controller](https://github.com/bro256/puzzle-15-backend/blob/main/images/swagger-game-controller.png)
 
 ### Create Game
