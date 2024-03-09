@@ -68,3 +68,8 @@ mvn clean install
 mvn spring-boot:run
 ```
 5. The API will be accessible at http://localhost:8080.
+
+## Contributing
+We welcome contributions from the community to improve the project.
+
+Thank you for considering contributing to the project! Your contributions help make the API better for everyone.
