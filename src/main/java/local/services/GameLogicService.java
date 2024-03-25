@@ -12,7 +12,7 @@ public class GameLogicService {
     }
 
     /**
-     * Intitialize game state
+     * Initialize game state
      */
     private void initializeGameState() {
         gameState = new int[size][size];
