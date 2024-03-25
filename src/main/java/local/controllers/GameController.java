@@ -15,13 +15,13 @@ public class GameController {
     private GameManagerService gameManagerService;
 
     @PostMapping
-    public ResponseEntity<String> createGame(){
+    public ResponseEntity<String> createGame() {
         String gameId = gameManagerService.createGame();
         return new ResponseEntity<>(gameId, HttpStatus.CREATED);
     }
 
     @GetMapping("/{gameId}")
-    public ResponseEntity<int[][]> getGameState(@PathVariable String gameId){
+    public ResponseEntity<int[][]> getGameState(@PathVariable String gameId) {
         int[][] gameState = gameManagerService.getGameState(gameId);
         if (gameState == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -41,7 +41,7 @@ public class GameController {
     }
 
     @GetMapping("/{gameId}/complete")
-    public ResponseEntity<Boolean> checkGameCompletion(@PathVariable String gameId){
+    public ResponseEntity<Boolean> checkGameCompletion(@PathVariable String gameId) {
         boolean isComplete = gameManagerService.isGameComplete(gameId);
         return new ResponseEntity<>(isComplete, HttpStatus.OK);
     }

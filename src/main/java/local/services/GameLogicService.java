@@ -27,6 +27,7 @@ public class GameLogicService {
 
     /**
      * Get game state
+     *
      * @return game state
      */
     public int[][] getGameState() {
@@ -35,6 +36,7 @@ public class GameLogicService {
 
     /**
      * Make move
+     *
      * @param tileValue the value of tile to move
      */
     public void makeMove(int tileValue) {
@@ -68,6 +70,7 @@ public class GameLogicService {
 
     /**
      * Check if game is complete
+     *
      * @return true if the game is complete, false otherwise.
      */
     public boolean isGameComplete() {
@@ -85,6 +88,7 @@ public class GameLogicService {
 
     /**
      * Get empty tile position
+     *
      * @return empty tile position
      */
     private int[] findEmptyTilePosition() {
@@ -100,6 +104,7 @@ public class GameLogicService {
 
     /**
      * Get new position
+     *
      * @param currentPosition
      * @param direction
      * @return new position
@@ -125,6 +130,7 @@ public class GameLogicService {
 
     /**
      * Check if position is valid
+     *
      * @param position position
      * @return the new position after moving in the specified direction.
      */
@@ -136,6 +142,7 @@ public class GameLogicService {
 
     /**
      * Swap tiles
+     *
      * @param position1 the position of the first tile to swap [row, column].
      * @param position2 the position of the second tile to swap [row, column].
      */
@@ -147,6 +154,7 @@ public class GameLogicService {
 
     /**
      * Find tile position
+     *
      * @param tileValue tile value
      * @return
      */
@@ -163,7 +171,8 @@ public class GameLogicService {
 
     /**
      * Check if is adjecant
-     * @param tilePosition the position of the tile to check [row, column].
+     *
+     * @param tilePosition      the position of the tile to check [row, column].
      * @param emptyTilePosition the position of the empty tile [row, column].
      * @return true if the tile is adjacent to the empty tile, false otherwise.
      */

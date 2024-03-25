@@ -17,6 +17,7 @@ public class GameManagerService {
 
     /**
      * Create new game
+     *
      * @return game ID
      */
     public String createGame() {
@@ -29,6 +30,7 @@ public class GameManagerService {
 
     /**
      * Get game state
+     *
      * @param gameId game ID
      * @return game state
      */
@@ -42,7 +44,8 @@ public class GameManagerService {
 
     /**
      * Make move
-     * @param gameId game ID
+     *
+     * @param gameId    game ID
      * @param tileValue tile Value
      */
     public void makeMove(String gameId, int tileValue) {
@@ -55,6 +58,7 @@ public class GameManagerService {
 
     /**
      * Shuffle game
+     *
      * @param gameId game ID
      */
     public void shuffleGame(String gameId) {
@@ -67,6 +71,7 @@ public class GameManagerService {
 
     /**
      * Check if selected game is complete
+     *
      * @param gameId game ID
      * @return {@code true} if the game is complete, {@code false} if the game is not complete.
      */
@@ -80,6 +85,7 @@ public class GameManagerService {
 
     /**
      * Generate unique game ID
+     *
      * @return generated game ID in String format
      */
     public String generateGameId() {

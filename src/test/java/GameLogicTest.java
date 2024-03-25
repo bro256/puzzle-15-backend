@@ -2,19 +2,20 @@ import local.services.GameLogicService;
 import local.services.GameManagerService;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class GameLogicTest {
     private GameLogicService gameLogicService;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         gameLogicService = new GameLogicService(4);
         gameLogicService.shuffleGame();
     }
 
     @Test
-    public void testGameState(){
+    public void testGameState() {
         int[][] gameState = gameLogicService.getGameState();
         assertNotNull(gameState);
         assertEquals(4, gameState.length);
@@ -25,10 +26,10 @@ public class GameLogicTest {
     }
 
     @Test
-    public void testNumberRange(){
+    public void testNumberRange() {
         int[][] gameState = gameLogicService.getGameState();
-        for(int[] row : gameState){
-            for(int tile : row){
+        for (int[] row : gameState) {
+            for (int tile : row) {
                 assertTrue(tile >= 0 && tile <= 15);
             }
         }
