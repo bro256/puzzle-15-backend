@@ -1,8 +1,6 @@
 package local.services;
 
-import local.services.GameLogicService;
 import org.springframework.stereotype.Component;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -35,10 +33,7 @@ public class GameManagerService {
      * @return game state
      */
     public int[][] getGameState(String gameId) {
-        GameLogicService gameLogicService = games.get(gameId);
-        if (gameLogicService == null) {
-            throw new IllegalArgumentException("Game not found");
-        }
+        GameLogicService gameLogicService = getGameLogicService(gameId);
         return gameLogicService.getGameState();
     }
 
@@ -49,10 +44,7 @@ public class GameManagerService {
      * @param tileValue tile Value
      */
     public void makeMove(String gameId, int tileValue) {
-        GameLogicService gameLogicService = games.get(gameId);
-        if (gameLogicService == null) {
-            throw new IllegalArgumentException("Game not found");
-        }
+        GameLogicService gameLogicService = getGameLogicService(gameId);
         gameLogicService.makeMove(tileValue);
     }
 
@@ -62,10 +54,7 @@ public class GameManagerService {
      * @param gameId game ID
      */
     public void shuffleGame(String gameId) {
-        GameLogicService gameLogicService = games.get(gameId);
-        if (gameLogicService == null) {
-            throw new IllegalArgumentException("Game not found");
-        }
+        GameLogicService gameLogicService = getGameLogicService(gameId);
         gameLogicService.shuffleGame();
     }
 
@@ -76,10 +65,7 @@ public class GameManagerService {
      * @return {@code true} if the game is complete, {@code false} if the game is not complete.
      */
     public boolean isGameComplete(String gameId) {
-        GameLogicService gameLogicService = games.get(gameId);
-        if (gameLogicService == null) {
-            throw new IllegalArgumentException("Game not found");
-        }
+        GameLogicService gameLogicService = getGameLogicService(gameId);
         return gameLogicService.isGameComplete();
     }
 
@@ -90,5 +76,20 @@ public class GameManagerService {
      */
     public String generateGameId() {
         return UUID.randomUUID().toString();
+    }
+
+    /**
+     * Retrieve the GameLogicService associated with the given gameId, or throw an IllegalArgumentException if not found.
+     *
+     * @param gameId game ID
+     * @return the GameLogicService associated with the given gameId
+     * @throws IllegalArgumentException if the game with the given gameId is not found
+     */
+    private GameLogicService getGameLogicService(String gameId) {
+        GameLogicService gameLogicService = games.get(gameId);
+        if (gameLogicService == null) {
+            throw new IllegalArgumentException("Game not found");
+        }
+        return gameLogicService;
     }
 }
