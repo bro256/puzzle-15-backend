@@ -23,14 +23,21 @@ public class GameController {
     @GetMapping("/{gameId}")
     public ResponseEntity<int[][]> getGameState(@PathVariable String gameId){
         int[][] gameState = gameManagerService.getGameState(gameId);
+        if (gameState == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity<>(gameState, HttpStatus.OK);
     }
 
     @PutMapping("/{gameId}/move")
     public ResponseEntity<int[][]> makeMove(@PathVariable String gameId, @RequestBody MoveRequest moveRequest) {
-        gameManagerService.makeMove(gameId, moveRequest.getTileValue());
-        int[][] updatedGameState = gameManagerService.getGameState(gameId);
-        return new ResponseEntity<>(updatedGameState, HttpStatus.OK);
+        try {
+            gameManagerService.makeMove(gameId, moveRequest.getTileValue());
+            int[][] updatedGameState = gameManagerService.getGameState(gameId);
+            return new ResponseEntity<>(updatedGameState, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("/{gameId}/complete")
