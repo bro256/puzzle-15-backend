@@ -49,16 +49,6 @@ public class GameManagerService {
     }
 
     /**
-     * Shuffle game
-     *
-     * @param gameId game ID
-     */
-    public void shuffleGame(String gameId) {
-        GameLogicService gameLogicService = getGameLogicService(gameId);
-        gameLogicService.shuffleGame();
-    }
-
-    /**
      * Check if selected game is complete
      *
      * @param gameId game ID
