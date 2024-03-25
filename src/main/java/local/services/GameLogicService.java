@@ -103,11 +103,11 @@ public class GameLogicService {
     }
 
     /**
-     * Get new position
+     * Get new position based on the current position and direction.
      *
-     * @param currentPosition
-     * @param direction
-     * @return new position
+     * @param currentPosition The current position as an array of two integers representing the (row, column) coordinates.
+     * @param direction The direction in which to move. Use 0 for up, 1 for down, 2 for left, and 3 for right.
+     * @return The new position after moving in the specified direction.
      */
     private int[] getNewPosition(int[] currentPosition, int direction) {
         int[] newPosition = Arrays.copyOf(currentPosition, currentPosition.length);
@@ -156,7 +156,7 @@ public class GameLogicService {
      * Find tile position
      *
      * @param tileValue tile value
-     * @return
+     * @return tile position
      */
     public int[] findTilePosition(int tileValue) {
         for (int i = 0; i < size; i++) {
@@ -170,7 +170,7 @@ public class GameLogicService {
     }
 
     /**
-     * Check if is adjecant
+     * Check if is adjacent
      *
      * @param tilePosition      the position of the tile to check [row, column].
      * @param emptyTilePosition the position of the empty tile [row, column].
