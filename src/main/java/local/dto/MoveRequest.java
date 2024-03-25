@@ -1,4 +1,4 @@
-package local;
+package local.dto;
 
 public class MoveRequest {
     private int tileValue;
