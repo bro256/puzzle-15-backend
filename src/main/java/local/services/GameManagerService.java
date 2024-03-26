@@ -1,5 +1,6 @@
 package local.services;
 
+import local.exceptions.NoSuchGameException;
 import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
@@ -78,7 +79,7 @@ public class GameManagerService {
     private GameLogicService getGameLogicService(String gameId) {
         GameLogicService gameLogicService = games.get(gameId);
         if (gameLogicService == null) {
-            throw new IllegalArgumentException("Game not found");
+            throw new NoSuchGameException("Game not found");
         }
         return gameLogicService;
     }
