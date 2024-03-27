@@ -1,10 +1,10 @@
 import local.services.GameManagerService;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GameManagerTest {
 
@@ -17,7 +17,7 @@ public class GameManagerTest {
         for (int i = 0; i < numberOfIdsToGenerate; i++) {
             String gameId = gameManagerService.generateGameId();
             assertNotNull(gameId);
-            assertFalse("Duplicate game ID generated", gameIds.contains(gameId));
+            assertFalse(gameIds.contains(gameId), "Duplicate game ID generated: " + gameId);
             gameIds.add(gameId);
         }
         assertEquals(numberOfIdsToGenerate, gameIds.size());
